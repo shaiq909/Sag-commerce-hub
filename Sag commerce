@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAG Commerce Hub - Commerce Coaching Excellence</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      color: #333;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Header Styles */
+    header {
+      background: linear-gradient(120deg, #1a3a6c, #2c5282);
+      color: white;
+      padding: 1.5rem 0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    
+    .logo h1 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 1.8rem;
+      margin-left: 10px;
+    }
+    
+    .logo-icon {
+      background: #f59e0b;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+    
+    .tagline {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      margin-top: 5px;
+      letter-spacing: 0.5px;
+    }
+    
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+    
+    nav ul li {
+      margin-left: 25px;
+    }
+    
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      padding: 8px 12px;
+      border-radius: 4px;
+    }
+    
+    nav ul li a:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+    
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(26, 58, 108, 0.85), rgba(26, 58, 108, 0.95)), 
+                  url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 6rem 0;
+      text-align: center;
+    }
+    
+    .hero h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 3.2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    
+    .hero p {
+      font-size: 1.4rem;
+      max-width: 700px;
+      margin: 0 auto 2.5rem;
+      opacity: 0.95;
+    }
+    
+    .cta-button {
+      display: inline-block;
+      background: #f59e0b;
+      color: #1a3a6c;
+      text-decoration: none;
+      padding: 15px 35px;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+    }
+    
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(245, 158, 11, 0.6);
+      background: #fbbf24;
+    }
+    
+    /* Features Section */
+    .features {
+      padding: 5rem 0;
+      background: white;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+    
+    .section-title h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.5rem;
+      color: #1a3a6c;
+      display: inline-block;
+    }
+    
+    .section-title h2:after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: #f59e0b;
+      margin: 10px auto;
+      border-radius: 2px;
+    }
+    
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 2rem;
+    }
+    
+    .feature-card {
+      background: #f8fafc;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-left: 4px solid #1a3a6c;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .feature-card h3 {
+      font-size: 1.4rem;
+      color: #1a3a6c;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .feature-card h3 i {
+      margin-right: 10px;
+      color: #f59e0b;
+    }
+    
+    .feature-list {
+      list-style: none;
+    }
+    
+    .feature-list li {
+      margin-bottom: 12px;
+      padding-left: 30px;
+      position: relative;
+    }
+    
+    .feature-list li:before {
+      content: '\f00c';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      position: absolute;
+      left: 0;
+      top: 3px;
+      color: #10b981;
+      background: #ecfdf5;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+    }
+    
+    /* Subjects Section */
+    .subjects {
+      padding: 5rem 0;
+      background: linear-gradient(135deg, #f0f7ff 0%, #e1effe 100%);
+    }
+    
+    .subjects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-top: 2rem;
+    }
+    
+    .subject-card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease;
+    }
+    
+    .subject-card:hover {
+      transform: translateY(-8px);
+    }
+    
+    .subject-header {
+      background: #1a3a6c;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    .subject-header h3 {
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
+    
+    .subject-body {
+      padding: 25px;
+    }
+    
+    .subject-body ul {
+      list-style: none;
+    }
+    
+    .subject-body li {
+      padding: 12px 0;
+      border-bottom: 1px dashed #e2e8f0;
+      display: flex;
+      align-items: center;
+    }
+    
+    .subject-body li:last-child {
+      border-bottom: none;
+    }
+    
+    .subject-body li i {
+      color: #f59e0b;
+      margin-right: 10px;
+      font-size: 1.1rem;
+    }
+    
+    /* CTA Section */
+    .cta-section {
+      background: linear-gradient(120deg, #2563eb, #1e40af);
+      color: white;
+      padding: 4rem 0;
+      text-align: center;
+    }
+    
+    .cta-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+    }
+    
+    .phone-number {
+      display: inline-block;
+      background: white;
+      color: #1e40af;
+      font-size: 2rem;
+      font-weight: 700;
+      padding: 15px 40px;
+      border-radius: 10px;
+      margin: 2rem 0;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .phone-number:hover {
+      transform: scale(1.05);
+      background: #f8fafc;
+    }
+    
+    .vision {
+      font-size: 1.4rem;
+      max-width: 800px;
+      margin: 2rem auto 0;
+      font-style: italic;
+      opacity: 0.95;
+    }
+    
+    .vision span {
+      color: #fbbf24;
+      font-weight: 600;
+    }
+    
+    /* Footer */
+    footer {
+      background: #0f172a;
+      color: white;
+      padding: 4rem 0 2rem;
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-bottom: 2rem;
+    }
+    
+    .footer-column h3 {
+      font-size: 1.4rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    
+    .footer-column h3:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: #f59e0b;
+    }
+    
+    .footer-contact p {
+      margin: 10px 0;
+      display: flex;
+      align-items: center;
+    }
+    
+    .footer-contact i {
+      margin-right: 10px;
+      color: #f59e0b;
+      width: 20px;
+      text-align: center;
+    }
+    
+    .social-icons {
+      display: flex;
+      margin-top: 20px;
+    }
+    
+    .social-icons a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      border-radius: 50%;
+      margin-right: 10px;
+      transition: all 0.3s ease;
+    }
+    
+    .social-icons a:hover {
+      background: #f59e0b;
+      transform: translateY(-3px);
+    }
+    
+    .copyright {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .hero h2 {
+        font-size: 2.8rem;
+      }
+      
+      .hero p {
+        font-size: 1.2rem;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .header-content {
+        flex-direction: column;
+      }
+      
+      nav {
+        margin-top: 20px;
+      }
+      
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
+      nav ul li {
+        margin: 5px 10px;
+      }
+      
+      .hero {
+        padding: 4rem 0;
+      }
+      
+      .hero h2 {
+        font-size: 2.3rem;
+      }
+      
+      .hero p {
+        font-size: 1.1rem;
+      }
+      
+      .section-title h2 {
+        font-size: 2rem;
+      }
+      
+      .cta-section h2 {
+        font-size: 2rem;
+      }
+      
+      .phone-number {
+        font-size: 1.5rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .logo h1 {
+        font-size: 1.5rem;
+      }
+      
+      .hero h2 {
+        font-size: 2rem;
+      }
+      
+      .phone-number {
+        font-size: 1.3rem;
+        padding: 12px 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <div class="logo-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <div>
+            <h1>SAG COMMERCE HUB</h1>
+            <div class="tagline">Your Gateway to Commerce Excellence</div>
+          </div>
+        </div>
+        
+        <nav>
+          <ul>
+            <li><a href="#features"><i class="fas fa-star"></i> Features</a></li>
+            <li><a href="#subjects"><i class="fas fa-book"></i> Subjects</a></li>
+            <li><a href="#contact"><i class="fas fa-phone"></i> Contact</a></li>
+            <li><a href="#footer"><i class="fas fa-info-circle"></i> About</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h2>Commerce Education Redefined</h2>
+      <p>Expert coaching for Class 11, 12, and B.Com students with a perfect blend of theory and practical knowledge</p>
+      <a href="#contact" class="cta-button">Enroll Now <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-title">
+        <h2>Why Choose SAG Commerce Hub?</h2>
+      </div>
+      
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3><i class="fas fa-chalkboard-user"></i> Comprehensive Coaching</h3>
+          <ul class="feature-list">
+            <li>COACHING FOR CLASS 11, 12 & B.COM</li>
+            <li>Full Syllabus Coverage - CBSE | ISC | State Boards | Universities</li>
+            <li>Conceptual Clarity + Practical Application</li>
+          </ul>
+        </div>
+        
+        <div class="feature-card">
+          <h3><i class="fas fa-lightbulb"></i> Learning Methodology</h3>
+          <ul class="feature-list">
+            <li>Learn How Concepts Work in the Real World – Beyond the Books!</li>
+            <li>Experienced & Qualified Faculty</li>
+            <li>Weekly Tests | Progress Reports</li>
+          </ul>
+        </div>
+        
+        <div class="feature-card">
+          <h3><i class="fas fa-chart-line"></i> Student Success</h3>
+          <ul class="feature-list">
+            <li>One-on-One Doubt Clearing Sessions</li>
+            <li>Regular Assignments & Career Guidance</li>
+            <li>Affordable Fees | Excellent Results Track Record</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Subjects Section -->
+  <section class="subjects" id="subjects">
+    <div class="container">
+      <div class="section-title">
+        <h2>Subjects Covered</h2>
+      </div>
+      
+      <div class="subjects-grid">
+        <div class="subject-card">
+          <div class="subject-header">
+            <h3>Core Subjects</h3>
+          </div>
+          <div class="subject-body">
+            <ul>
+              <li><i class="fas fa-file-invoice-dollar"></i> Accountancy</li>
+              <li><i class="fas fa-briefcase"></i> Business Studies</li>
+              <li><i class="fas fa-chart-pie"></i> Economics</li>
+              <li><i class="fas fa-balance-scale"></i> Law & More</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="subject-card">
+          <div class="subject-header">
+            <h3>Specialized Subjects</h3>
+          </div>
+          <div class="subject-body">
+            <ul>
+              <li><i class="fas fa-percent"></i> Income Tax</li>
+              <li><i class="fas fa-money-check"></i> Financial Management</li>
+              <li><i class="fas fa-search-dollar"></i> Auditing</li>
+              <li><i class="fas fa-gavel"></i> Law & More</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="subject-card">
+          <div class="subject-header">
+            <h3>Practical Learning</h3>
+          </div>
+          <div class="subject-body">
+            <ul>
+              <li><i class="fas fa-laptop-code"></i> Accounting Software Training</li>
+              <li><i class="fas fa-chart-bar"></i> Financial Analysis</li>
+              <li><i class="fas fa-file-contract"></i> Business Documentation</li>
+              <li><i class="fas fa-handshake"></i> Case Studies & Real-world Scenarios</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section" id="contact">
+    <div class="container">
+      <h2>NEW BATCHES STARTING SOON!</h2>
+      <p>Limited seats available - Reserve your spot today!</p>
+      
+      <a href="tel:7980857943" class="phone-number">
+        <i class="fas fa-phone"></i> 7980857943
+      </a>
+      
+      <div class="vision">
+        <i class="fas fa-quote-left"></i> Join SAG Commerce Hub – Learn Commerce with a Vision! 
+        <span>Where Book Knowledge Meets Practical Insight</span> <i class="fas fa-quote-right"></i>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>SAG Commerce Hub</h3>
+          <p>Your premier destination for commerce education, providing expert coaching for Class 11, 12, and B.Com students.</p>
+          <p>We bridge the gap between theoretical knowledge and practical application to create future-ready commerce professionals.</p>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul class="feature-list">
+            <li><a href="#features"><i class="fas fa-chevron-right"></i> Our Features</a></li>
+            <li><a href="#subjects"><i class="fas fa-chevron-right"></i> Subjects</a></li>
+            <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Testimonials</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column footer-contact">
+          <h3>Contact Us</h3>
+          <p><i class="fas fa-map-marker-alt"></i> G-357, Alif Nagar, Garden Reach</p>
+          <p><i class="fas fa-phone"></i> 7980857943</p>
+          <p><i class="fas fa-envelope"></i> saganddco@gmail.com</p>
+          
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="copyright">
+        <p>&copy; 2023 SAG Commerce Hub. All Rights Reserved. | Designed with <i class="fas fa-heart" style="color: #f59e0b;"></i> for Commerce Excellence</p>
+      </div>
+    </div>
+  </footer>
+  
+  <script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+    
+    // Animation for feature cards on scroll
+    const featureCards = document.querySelectorAll('.feature-card');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    featureCards.forEach(card => {
+      card.style.opacity = 0;
+      card.style.transform = 'translateY(20px)';
+      card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      observer.observe(card);
+    });
+  </script>
+</body>
+</html>
