@@ -3,174 +3,129 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SAG Commerce Hub - Commerce Coaching Excellence</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <title>SAG Commerce Hub</title>
   <style>
-    * {
-      margin: 0; padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
-
     body {
-      background-color: #f4f4f4;
-      color: #333;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      color: #2c2c2c;
+      background-color: #fff;
     }
-
     header {
-      background-color: #ff6f00;
-      color: #fff;
+      background-color: #800000;
+      color: white;
       padding: 20px;
       text-align: center;
     }
-
     header h1 {
-      font-size: 2.5rem;
+      margin: 0;
+      font-size: 2em;
     }
-
-    .container {
-      padding: 30px 20px;
-      max-width: 1200px;
+    header p {
+      font-style: italic;
+      font-size: 1em;
+    }
+    .section {
+      padding: 20px;
+      max-width: 1000px;
       margin: auto;
     }
-
-    section {
-      margin-bottom: 50px;
-    }
-
-    .section-title {
-      font-size: 1.8rem;
-      margin-bottom: 15px;
-      border-bottom: 3px solid #ff6f00;
-      display: inline-block;
-      padding-bottom: 5px;
-    }
-
-    .subjects, .books, .fun, .documents {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      background-color: white;
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-    }
-
-    .card:hover {
-      transform: scale(1.03);
-    }
-
-    .card i {
-      font-size: 2rem;
-      color: #ff6f00;
+    .highlight {
+      font-weight: bold;
+      font-size: 1.2em;
       margin-bottom: 10px;
     }
-
-    .contact {
-      background: #222;
-      color: #fff;
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    ul li::before {
+      content: "✔️";
+      margin-right: 10px;
+      color: #800000;
+    }
+    .flex-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .flex-box {
+      flex: 1 1 45%;
+      background-color: #f4f4f4;
+      padding: 15px;
+      border-radius: 8px;
+    }
+    footer {
+      background-color: #800000;
+      color: white;
       padding: 20px;
       text-align: center;
     }
-
-    .contact a {
-      color: #ff6f00;
+    a, a:visited {
+      color: white;
       text-decoration: none;
     }
-
-    .upload-section {
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    .upload-section input {
-      margin-top: 10px;
-    }
-
-    footer {
-      background-color: #333;
-      color: #fff;
-      padding: 15px;
-      text-align: center;
+    @media(max-width: 768px) {
+      .flex-box {
+        flex: 1 1 100%;
+      }
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>SAG Commerce Hub</h1>
-  <p>Your Gateway to Commerce Excellence</p>
-</header>
+  <header>
+    <h1>SAG COMMERCE HUB</h1>
+    <p>Your Gateway to Commerce Excellence</p>
+  </header>
 
-<div class="container">
-
-  <section>
-    <h2 class="section-title">About Us</h2>
-    <p>We provide coaching for Class 11, 12 & B.Com students with full syllabus coverage, real-world learning, expert faculty, weekly tests, doubt-clearing sessions, and affordable fees.</p>
+  <section class="section">
+    <p class="highlight">📘 Coaching for Class 11, 12 & B.Com</p>
+    <p>Looking for conceptual clarity and real-world understanding in commerce subjects from expert mentors?</p>
+    
+    <hr>
+    
+    <h2>We Provide Expert Coaching In:</h2>
+    <ul>
+      <li>Full Syllabus Coverage – CBSE, ISC, State Boards, Universities</li>
+      <li>Conceptual Clarity + Practical Application</li>
+      <li>Learn Beyond Books – Real-Life Application</li>
+      <li>Experienced & Qualified Faculty</li>
+      <li>Weekly Tests | Progress Reports | One-on-One Doubt Clearing</li>
+      <li>Regular Assignments & Career Guidance</li>
+      <li>Affordable Fees | Excellent Result Track Record</li>
+    </ul>
   </section>
 
-  <section>
-    <h2 class="section-title">Subjects Offered</h2>
-    <div class="subjects">
-      <div class="card"><i class="fas fa-book"></i> Accountancy</div>
-      <div class="card"><i class="fas fa-chart-line"></i> Business Studies</div>
-      <div class="card"><i class="fas fa-coins"></i> Economics</div>
-      <div class="card"><i class="fas fa-balance-scale"></i> Law & More</div>
-      <div class="card"><i class="fas fa-file-invoice-dollar"></i> Income Tax</div>
-      <div class="card"><i class="fas fa-hand-holding-usd"></i> Financial Management</div>
-      <div class="card"><i class="fas fa-clipboard-check"></i> Auditing</div>
+  <section class="section flex-container">
+    <div class="flex-box">
+      <h3>🌐 All Services Available</h3>
+      <ul>
+        <li>100% Offline & Online</li>
+        <li>PAN India Coverage</li>
+        <li>Personalised sessions</li>
+        <li>Regular interaction</li>
+        <li>Flexible timings</li>
+      </ul>
+    </div>
+
+    <div class="flex-box">
+      <h3>💼 Why Choose SAG?</h3>
+      <ul>
+        <li>Expert & Qualified Instructors</li>
+        <li>Structured & Focused Coaching</li>
+        <li>Quick Doubt Support</li>
+        <li>Affordable Fees | Transparent</li>
+      </ul>
     </div>
   </section>
 
-  <section>
-    <h2 class="section-title">Student Knowledge Junction</h2>
-    <div class="books">
-      <div class="card"><i class="fas fa-book-reader"></i> Must-Read: Nitin Singhania’s Business Basics</div>
-      <div class="card"><i class="fas fa-book-open"></i> Recommended: T.S. Grewal for Accounts</div>
-      <div class="card"><i class="fas fa-video"></i> YouTube: Practical GST Filing Tutorial</div>
-      <div class="card"><i class="fas fa-lightbulb"></i> Tips: How to Read Balance Sheets</div>
-    </div>
-  </section>
-
-  <section>
-    <h2 class="section-title">Fun Corner</h2>
-    <div class="fun">
-      <div class="card"><i class="fas fa-question-circle"></i> Weekly Quiz: Win Exciting Rewards</div>
-      <div class="card"><i class="fas fa-laugh-beam"></i> Commerce Memes: Laugh & Learn</div>
-      <div class="card"><i class="fas fa-trophy"></i> Student of the Month: See Who’s On Top!</div>
-    </div>
-  </section>
-
-  <section>
-    <h2 class="section-title">Document Center</h2>
-    <div class="upload-section">
-      <p>Upload your documents, assignments, or download useful resources below:</p>
-      <input type="file" />
-      <br><br>
-      <a href="#">Download Weekly Assignment</a><br>
-      <a href="#">Fee Structure PDF</a><br>
-      <a href="#">Career Guidance eBook</a>
-    </div>
-  </section>
-
-</div>
-
-<div class="contact">
-  <h2>New Batches Starting Soon!</h2>
-  <p><i class="fas fa-phone-alt"></i> Call Us: <a href="tel:7980857943">7980857943</a></p>
-</div>
-
-<footer>
-  Join SAG Commerce Hub – Learn Commerce with a Vision!<br>
-  Where Book Knowledge Meets Practical Insight.
-</footer>
+  <footer>
+    <h3>📅 New Batches Starting Soon!</h3>
+    <p>📞 Call Us: <a href="tel:7980857943">7980857943</a></p>
+    <p>📧 Email: <a href="mailto:798085794@gmail.com">798085794@gmail.com</a></p>
+  </footer>
 
 </body>
 </html>
